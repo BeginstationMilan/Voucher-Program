@@ -9,7 +9,7 @@ Dit script is uitsluitend bedoeld voor medewerkers van Fietsstation en de eigena
 - [Vereisten](#vereisten)
 - [Installatie](#installatie)
 - [Gebruik](#gebruik)
-- [Hoofdmenu Uitleg](#Hoofdmenu)
+- [Hoofdmenu](#Hoofdmenu)
 - [Functies](#functies)
 - [Output File](#output-file)
 - [Default Folder](#default-folder)
