@@ -23,8 +23,10 @@ Voordat je begint, zorg ervoor dat je aan de volgende vereisten voldoet:
 2. Pak het zip-bestand uit naar een gewenste locatie op je computer.
 3. Open de uitgepakte map en voer de setup-folder uit.
 4. Volg de stappen in de folder:
-    - **Stap 1**: Installatie van Python 3.11
-    - **Stap 2**: Installatie van de vereiste pakketten
+    - **Stap 1**: Installatie van Python 3.11  
+      Open het bestand genaamd `step 1 Python 3.11.cmd`
+    - **Stap 2**: Installatie van de vereiste pakketten  
+      Open het bestand genaamd `step 2 Pip install.cmd`
 
 Je hoeft geen `credentials.json` bestand te plaatsen; dit is al inbegrepen in de download.
 
@@ -33,6 +35,10 @@ Je hoeft geen `credentials.json` bestand te plaatsen; dit is al inbegrepen in de
 Klik op het `voucher.py` bestand om het script te starten.
 
 Het script zal je een menu presenteren om verschillende bewerkingen uit te voeren, zoals het genereren van codes, het controleren van de geldigheid van een code, het afdrukken van codes, het bekijken van informatie, het activeren en inwisselen van codes.
+
+### Output File
+
+De gegenereerde coupons en barcodes worden opgeslagen in een output-bestand. Dit bestand bevat alle uitkomsten van het script, zoals de gegenereerde barcodes en coupons. Zorg ervoor dat je de locatie van dit bestand noteert, zodat je eenvoudig toegang hebt tot de opgeslagen gegevens.
 
 ## Functies
 
