@@ -18,7 +18,8 @@ if /i "%have_python%"=="Y" (
         echo After installation, press any key to continue...
         pause > nul
         echo Installing required modules using pip...
-        pip install gspread oauth2client img2pdf pillow pystrich pywin32 tqdm google-api-python-client google-auth google-auth-oauthlib google-auth-httplib2
+        pip install gspread colorama img2pdf oauth2client Pillow pywin32 qrcode python-barcode==0.13.1 pypiwin32
+
 
     ) else (
         echo Exiting...
