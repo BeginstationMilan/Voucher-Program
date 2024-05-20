@@ -27,7 +27,7 @@ Voordat je begint, zorg ervoor dat je aan de volgende vereisten voldoet:
 3. Open de uitgepakte map en voer de setup-folder uit.
 4. Volg de stappen in de folder:
     - **Stap 1**: Installatie van Python 3.11  
-      Open het bestand genaamd `step 1 Python 3.11.cmd`
+      Open het bestand genaamd `step 1 Python 3.11.exe`
     - **Stap 2**: Installatie van de vereiste pakketten  
       Open het bestand genaamd `step 2 Pip install.cmd`
 
