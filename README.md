@@ -38,7 +38,7 @@ Je hoeft geen `credentials.json` bestand te plaatsen; dit is al inbegrepen in de
 Klik op het `voucher.py` bestand om het script te starten.
 
 Je zult 2 versies zien
-`Voucher-EG.py` En `Voucher-NL.py`
+`Voucher-EG.py` En `Voucher-NL.py`, 
 `Voucher-EG.py` Is de engelse versie en `Voucher-NL.py` is de nederlandse versie.
 Je kunt zelf kiezen welke je wilt gebruiken
 Het script zal je een menu presenteren om verschillende bewerkingen uit te voeren, zoals het genereren van codes, het controleren van de geldigheid van een code, het afdrukken van codes, het bekijken van informatie, het activeren en inwisselen van codes.
