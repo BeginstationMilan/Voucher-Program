@@ -9,6 +9,7 @@ Dit script is uitsluitend bedoeld voor medewerkers van Fietsstation en de eigena
 - [Vereisten](#vereisten)
 - [Installatie](#installatie)
 - [Gebruik](#gebruik)
+- [Hoofdmenu Uitleg](#Hoofdmenu)
 - [Functies](#functies)
 - [Output File](#output-file)
 - [Default Folder](#default-folder)
@@ -42,6 +43,10 @@ Je zult 2 versies zien
 `Voucher-EG.py` Is de engelse versie en `Voucher-NL.py` is de nederlandse versie.
 Je kunt zelf kiezen welke je wilt gebruiken
 Het script zal je een menu presenteren om verschillende bewerkingen uit te voeren, zoals het genereren van codes, het controleren van de geldigheid van een code, het afdrukken van codes, het bekijken van informatie, het activeren en inwisselen van codes.
+
+##Hoofdmenu
+
+
 
 ## Output File
 
