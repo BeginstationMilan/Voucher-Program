@@ -1,1 +1,1 @@
-start ms-windows-store://pdp/?productid=9NRWMJP3717K
+start https://www.python.org/downloads/
