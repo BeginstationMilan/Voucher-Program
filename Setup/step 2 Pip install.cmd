@@ -1,0 +1,9 @@
+pip install gspread       
+pip install pypiwin32
+pip install python-barcode==0.13.1
+pip install qrcode
+pip install pywin32
+pip install Pillow
+pip install oauth2client
+pip install img2pdf
+pip install colorama
