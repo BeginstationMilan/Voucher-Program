@@ -1,5 +1,7 @@
 import gspread
 import time
+import sys
+import threading
 import random
 import colorama
 import string
@@ -28,6 +30,10 @@ import win32con
 import win32print
 import barcode
 import base64
+from alive_progress import alive_bar
+import warnings
+
+warnings.simplefilter("ignore", SyntaxWarning)
 
 Code128.default_writer_options['write_text'] = False
 
@@ -44,23 +50,7 @@ if not os.path.exists(OUTPUT_DIR):
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
-
-def loading_bar(action, *args):
-    def run_action():
-        action(*args)
     
-    thread = threading.Thread(target=run_action)
-    thread.start()
-    
-    print("Loading", end="", flush=True)
-    for _ in range(40):
-        if not thread.is_alive():
-            break
-        print(".", end="", flush=True)
-        time.sleep(0.1)
-    print("\n", end="")  # Move to the next line after loading bar
-    thread.join()
-
 def generate_unique_code():
     return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(8))
 
@@ -164,6 +154,7 @@ def check_code_validity(code, credentials_file_path=CREDENTIALS_FILE_PATH):
                 if code_value.startswith("~"):
                     redemption_date = row[4]
                     print(f"Code is redeemed on {redemption_date}.")
+                    time.sleep(3)
                 elif code_value.startswith("*"):
                     print("Code is not activated.")
                 else:
@@ -262,7 +253,7 @@ def make_printed():
         for code, row_index in selected_codes:
             codes.append(code)
             sheet.update_cell(row_index + 1, 3, "Printed")
-            print(f"Code {code} marked as printed.")
+            print(f"Code {code} found.")
 
         final_image_filename = os.path.join(DEFAULT_DIR, 'final.png')
         final_output_path = os.path.join(OUTPUT_DIR, 'final_output.png')
@@ -304,7 +295,9 @@ def make_printed():
                     draw.text((pos_x + 10, pos_y + 10), f"Code: {code_without_asterisk}", fill="black", font=font)
 
             final_img.save(final_output_path)
-            print("Output image combined with final design successfully.")
+            print("\nGenerating page.........")
+            time.sleep(2)
+            print("\nOutput image combined with final design successfully.")
 
             images = [final_output_path, os.path.join(DEFAULT_DIR, 'standaard_full.png')]
             pdf_bytes = img2pdf.convert(images)
@@ -398,7 +391,20 @@ def print_images_in_windows(file_paths):
 def info_status():
     while True:
         clear_screen()
-        print("Info Status Menu:")
+        print("\033[1m   _____        __         \033[0m")
+        print("\033[1m  |_   _|      / _|        \033[0m")
+        print("\033[1m    | |  _ __ | |_ ___     \033[0m")
+        print("\033[1m    | | | '_ \|  _/ _ \    \033[0m")
+        print("\033[1m   _| |_| | | | || (_) |   \033[0m")
+        print("\033[1m  |_____|_| |_|_| \___/    \033[0m")
+        print("\033[1m  |  \/  |                 \033[0m")
+        print("\033[1m  | \  / | ___ _ __  _   _ \033[0m")
+        print("\033[1m  | |\/| |/ _ \ '_ \| | | |\033[0m")
+        print("\033[1m  | |  | |  __/ | | | |_| |\033[0m")
+        print("\033[1m  |_|  |_|\___|_| |_|\__,_|\033[0m")
+        print("\033[1m                           \033[0m")
+        print("\033[1m                           \033[0m")
+        print("\nInfo Status Menu:")
         print("1. Basic Info")
         print("2. All Codes")
         print("3. Return to Main Menu")
@@ -466,6 +472,7 @@ def show_all_codes():
                 code = row[0]
                 code_status = "Active" if code and not code.startswith("*") and not code.startswith("~") else "Inactive" if code and code.startswith("*") else "Used" if code and code.startswith("~") else "Unknown"
                 print(f"Code: {code}, Status: {code_status}")
+                time.sleep(0.03)
 
         input("Press any key to return to the Info Status Menu...")
     except Exception as e:
@@ -522,44 +529,105 @@ def main():
         print("\033[1m |_|   |_|  \___/ \__, |_|  \__,_|_| |_| |_|\033[0m")
         print("\033[1m                   __/ |                    \033[0m")
         print("\033[1m                  |___/                     \033[0m")
-        print("\nThis program is was created by: Milan Vosters")
+        print("\nThis program was created by: Milan Vosters")
 
         print("\nMenu:")
         print("\n 1. Generate codes")
-        print(" 2. Check code validity")
-        print(" 3. Print")
+        print(" 2. Verify code")
+        print(" 3. Print codes")
         print(" 4. Info status")
         print(" 5. Activate code")
         print(" 6. Redeem code")
         print(" 7. Exit")
 
         choice = input("\nEnter your choice: ")
-
+        
         if choice == '1':
             clear_screen()
+            print("\033[1m   _____          _                              \033[0m")
+            print("\033[1m  / ____|        | |                             \033[0m")
+            print("\033[1m | |     ___   __| | ___                         \033[0m")
+            print("\033[1m | |    / _ \ / _` |/ _ \                        \033[0m")
+            print("\033[1m | |___| (_) | (_| |  __/                        \033[0m")
+            print("\033[1m  \_____\___/ \__,_|\___|          _             \033[0m")
+            print("\033[1m  / ____|                         | |            \033[0m")
+            print("\033[1m | |  __  ___ _ __   ___ _ __ __ _| |_ ___  _ __ \033[0m")
+            print("\033[1m | | |_ |/ _ \ '_ \ / _ \ '__/ _` | __/ _ \| '__|\033[0m")
+            print("\033[1m | |__| |  __/ | | |  __/ | | (_| | || (_) | |   \033[0m")
+            print("\033[1m  \_____|\___|_| |_|\___|_|  \__,_|\__\___/|_|   \033[0m")
+            print("\033[1m                                                 \033[0m")
+            print("\033[1m                                                 \033[0m")
             num_codes = int(input("How many codes do you want to generate? "))
-            clear_screen()
             add_to_google_sheet(num_codes)
         elif choice == '2':
             clear_screen()
-            code = input("Enter code to check validity: ")
-            clear_screen()
+            print("\033[1m  __      __       _  __       \033[0m")
+            print("\033[1m  \ \    / /      (_)/ _|      \033[0m")
+            print("\033[1m   \ \  / /__ _ __ _| |_ _   _ \033[0m")
+            print("\033[1m    \ \/ / _ \ '__| |  _| | | |\033[0m")
+            print("\033[1m     \  /  __/ |  | | | | |_| |\033[0m")
+            print("\033[1m    __\/_\___|_|  |_|_|  \__, |\033[0m")
+            print("\033[1m   / ____|        | |     __/ |\033[0m")
+            print("\033[1m  | |     ___   __| | ___|___/ \033[0m")
+            print("\033[1m  | |    / _ \ / _` |/ _ \     \033[0m")
+            print("\033[1m  | |___| (_) | (_| |  __/     \033[0m")
+            print("\033[1m   \_____\___/ \__,_|\___|     \033[0m")
+            print("\033[1m                               \033[0m")
+            print("\033[1m                               \033[0m")
+            code = input("Enter code to verify: ")
             check_code_validity(code)
         elif choice == '3':
             clear_screen()
+            print("\033[1m   _____      _       _        \033[0m")
+            print("\033[1m  |  __ \    (_)     | |       \033[0m")
+            print("\033[1m  | |__) | __ _ _ __ | |_      \033[0m")
+            print("\033[1m  |  ___/ '__| | '_ \| __|     \033[0m")
+            print("\033[1m  | |   | |  | | | | | |_      \033[0m")
+            print("\033[1m  |_|___|_|  |_|_| |_|\__|     \033[0m")
+            print("\033[1m   / ____|        | |          \033[0m")
+            print("\033[1m  | |     ___   __| | ___  ___ \033[0m")
+            print("\033[1m  | |    / _ \ / _` |/ _ \/ __|\033[0m")
+            print("\033[1m  | |___| (_) | (_| |  __/\__ \\\033[0m")
+            print("\033[1m   \_____\___/ \__,_|\___||___/\033[0m")
+            print("\033[1m                               \033[0m")
+            print("\033[1m                               \033[0m")
             make_printed()
         elif choice == '4':
             clear_screen()
             info_status()
         elif choice == '5':
             clear_screen()
-            code = input("Enter code to activate: ")
-            clear_screen()
+            print("\033[1m               _   _            _        \033[0m")
+            print("\033[1m     /\       | | (_)          | |       \033[0m")
+            print("\033[1m    /  \   ___| |_ ___   ____ _| |_ ___  \033[0m")
+            print("\033[1m   / /\ \ / __| __| \ \ / / _` | __/ _ \ \033[0m")
+            print("\033[1m  / ____ \ (__| |_| |\ V / (_| | ||  __/ \033[0m")
+            print("\033[1m /_/____\_\___|\__|_| \_/ \__,_|\__\___| \033[0m")
+            print("\033[1m  / ____|        | |                      \033[0m")
+            print("\033[1m | |     ___   __| | ___                  \033[0m")
+            print("\033[1m | |    / _ \ / _` |/ _ \                 \033[0m")
+            print("\033[1m | |___| (_) | (_| |  __/                 \033[0m")
+            print("\033[1m  \_____\___/ \__,_|\___|                 \033[0m")
+            print("\033[1m                                          \033[0m")
+            print("\033[1m                                          \033[0m")
+            code = input("\nEnter code to activate: ")
             activate_code(code)
         elif choice == '6':
             clear_screen()
-            code = input("Enter code to redeem: ")
-            clear_screen()
+            print("\033[1m  _____          _                     \033[0m")
+            print("\033[1m |  __ \        | |                    \033[0m")
+            print("\033[1m | |__) |___  __| | ___  ___ _ __ ___  \033[0m")
+            print("\033[1m |  _  // _ \/ _` |/ _ \/ _ \ '_ ` _ \ \033[0m")
+            print("\033[1m | | \ \  __/ (_| |  __/  __/ | | | | |\033[0m")
+            print("\033[1m |_|__\_\___|\__,_|\___|\___|_| |_| |_|\033[0m")
+            print("\033[1m  / ____|        | |                    \033[0m")
+            print("\033[1m | |     ___   __| | ___                \033[0m")
+            print("\033[1m | |    / _ \ / _` |/ _ \               \033[0m")
+            print("\033[1m | |___| (_) | (_| |  __/               \033[0m")
+            print("\033[1m  \_____\___/ \__,_|\___|               \033[0m")
+            print("\033[1m                                        \033[0m")
+            print("\033[1m                                        \033[0m")
+            code = input("\nEnter code to redeem: ")
             redeem_code(code)
         elif choice == '7':
             print("Exiting program...")
@@ -572,6 +640,5 @@ def main():
 
     print("End of program.")
 
-    # Call the main function to start the program
 if __name__ == "__main__":
     main()
