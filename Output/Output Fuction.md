@@ -1,0 +1,1 @@
+Here will the script auto upload all outputs
