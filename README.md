@@ -44,7 +44,7 @@ Je zult 2 versies zien
 Je kunt zelf kiezen welke je wilt gebruiken
 Het script zal je een menu presenteren om verschillende bewerkingen uit te voeren, zoals het genereren van codes, het controleren van de geldigheid van een code, het afdrukken van codes, het bekijken van informatie, het activeren en inwisselen van codes.
 
-##Hoofdmenu
+## Hoofdmenu
 
 Deze uitleg moet nog geschreven worden
 
