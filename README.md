@@ -10,10 +10,10 @@ Dit script is uitsluitend bedoeld voor medewerkers van Fietsstation en de eigena
 - [Installatie](#installatie)
 - [Gebruik](#gebruik)
 - [Hoofdmenu](#Hoofdmenu)
-- [Functies](#functies)
 - [Output File](#output-file)
 - [Default Folder](#default-folder)
 - [Spreadsheet Toegang](#spreadsheet-toegang)
+- [Functies](#functies)
 
 ## Vereisten
 
