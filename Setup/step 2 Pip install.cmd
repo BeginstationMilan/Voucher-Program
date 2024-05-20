@@ -7,3 +7,4 @@ pip install Pillow
 pip install oauth2client
 pip install img2pdf
 pip install colorama
+pip install alive-progress
