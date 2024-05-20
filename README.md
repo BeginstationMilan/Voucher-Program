@@ -10,6 +10,9 @@ Dit script is uitsluitend bedoeld voor medewerkers van Fietsstation en de eigena
 - [Installatie](#installatie)
 - [Gebruik](#gebruik)
 - [Functies](#functies)
+- [Output File](#output-file)
+- [Default Folder](#default-folder)
+- [Spreadsheet Toegang](#spreadsheet-toegang)
 
 ## Vereisten
 
@@ -36,9 +39,17 @@ Klik op het `voucher.py` bestand om het script te starten.
 
 Het script zal je een menu presenteren om verschillende bewerkingen uit te voeren, zoals het genereren van codes, het controleren van de geldigheid van een code, het afdrukken van codes, het bekijken van informatie, het activeren en inwisselen van codes.
 
-### Output File
+## Output File
 
 De gegenereerde coupons en barcodes worden opgeslagen in een output-bestand. Dit bestand bevat alle uitkomsten van het script, zoals de gegenereerde barcodes en coupons. Zorg ervoor dat je de locatie van dit bestand noteert, zodat je eenvoudig toegang hebt tot de opgeslagen gegevens.
+
+## Default Folder
+
+De folder genaamd `Default` bevat alle standaard ontwerpen die het script nodig heeft om de coupons en barcodes te maken. Zorg ervoor dat deze folder aanwezig is in de hoofdmap van het project, omdat het script anders niet correct zal functioneren.
+
+## Spreadsheet Toegang
+
+In de hoofdmap van de uitgepakte bestanden bevindt zich een bestand genaamd `Open_spreadsheet.cmd`. Dit bestand opent een link naar de Google Spreadsheet die alle informatie en codes bevat. Door dit bestand uit te voeren, krijg je eenvoudig toegang tot de spreadsheet waar je de status en details van alle vouchercodes kunt beheren.
 
 ## Functies
 
