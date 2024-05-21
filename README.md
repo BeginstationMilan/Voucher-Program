@@ -32,7 +32,8 @@ Voordat je begint, zorg ervoor dat je aan de volgende vereisten voldoet:
     - **Stap 1**: Installatie van Python  
       Open het bestand genaamd `step 1 Python.cmd`
       Als windows zegt dat het bestand onveilig is klik op *Meer info/More info*
-      En klik daarna op Run
+      En klik daarna op Run<br />
+![](gifs/step1.gif)
       Download python via de site die wordt geopent
     - **Stap 2**: Installatie van de vereiste pakketten  
       Open het bestand genaamd `step 2 Pip install.cmd`
