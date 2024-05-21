@@ -9,7 +9,7 @@ Dit script is uitsluitend bedoeld voor medewerkers van Fietsstation en de eigena
 - [Vereisten](#vereisten)
 - [Installatie](#installatie)
 - [Gebruik](#gebruik)
-- [Hoofdmenu](#Hoofdmenu)
+- [Hoofd Menu](#hoofd-menu)
 - [Output File](#output-file)
 - [Default Folder](#default-folder)
 - [Spreadsheet Toegang](#spreadsheet-toegang)
@@ -50,9 +50,29 @@ Je zult 2 versies zien
 Je kunt zelf kiezen welke je wilt gebruiken
 Het script zal je een menu presenteren om verschillende bewerkingen uit te voeren, zoals het genereren van codes, het controleren van de geldigheid van een code, het afdrukken van codes, het bekijken van informatie, het activeren en inwisselen van codes.
 
-## Hoofdmenu
+## Hoofd menu
+   - **Optie 1**: Deze optie is `Code Generator/Code Genarator`
+Met deze optie kun je codes genereren in het spreadsheet `Open_spreadsheet.cmd`.
+Je kunt een aantal invoeren en deze zullen gegenereerd worden binnen 10 seconden.
 
-Deze uitleg moet nog geschreven worden
+   - **Optie 2**: Deze optie is `Code verifieren/Verify Code`
+   Met deze optie kun je een code van een klant of `Open_spreadsheet.cmd` pakken en checken of hij geldig is en wat de status is.
+
+   - **Optie 3**: Dit is de optie `Print/Printen`
+   Met deze optie worden er *36* Random ongeactiveerde codes gevonden en op een blaadje met de coupons en barcode geplaatst.
+Dit is een voorbeeld:
+ [Coupon_List.pdf](https://github.com/BeginstationMilan/Voucher-Program/files/15388530/Coupon_List.pdf)
+Als de maat niet klopt of er is iets fout ga naar Contact onderaan en stuur een email.
+
+   - **Optie 4**: Dit is een mini menu voor info
+     - **4.1**: Dit is Basis info dit geeft een lijst van het volgende:
+`Totaal aantal codes` = Aantal codes
+`Actieve codes` = Aantal actieve codes
+`Inactieve codes` = Aantal inactieve codes
+`Geprinte codes` = Aantal geprinte codes
+`Gebruikte codes` = Aantal gebruikte codes
+`Programma gemaakt door: Milan Vosters` = Info over maker
+`Project gestart op: 08:00AM 16/5/2024` = Info over Project
 
 ## Output File
 
@@ -126,6 +146,7 @@ Wisselt een opgegeven code in door deze als gebruikt te markeren in de Google Sh
 De hoofdfunctie die een gebruikersinterface biedt voor het beheren van vouchercodes.
 
 ---
+## Contact
 
 **Gemaakt door**: Milan Vosters  
 **Project gestart op**: 08:00AM 16/5/2024
