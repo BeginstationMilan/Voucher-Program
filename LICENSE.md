@@ -1,5 +1,7 @@
-All Rights Reserved
+Aangepaste Licentie
 
-Copyright (c) [2024] [Milan Vosters]
+Auteursrecht (c) [2024] [Milan Vosters]
 
-All rights reserved. This software or any portion thereof may not be reproduced or used in any manner whatsoever without the express written permission of the copyright holder.
+Hierbij wordt uitsluitend toestemming verleend aan Beginstation, Fietsstation, om deze software te gebruiken. Beginstation, Fietsstation zijn echter strikt verboden om de software te wijzigen, te verspreiden, sublicenties te verlenen, of op welke andere manier dan ook te exploiteren zonder de uitdrukkelijke schriftelijke toestemming van de auteursrechthouder.
+
+Geen enkele andere personen, organisaties of entiteiten worden onder deze licentie enig recht verleend om de software te gebruiken, wijzigen, verspreiden, sublicenties te verlenen of anderszins te exploiteren.
