@@ -56,23 +56,23 @@ Het script zal je een menu presenteren om verschillende bewerkingen uit te voere
 ## Hoofd menu
 
 - **Menu**: Dit is wat je ziet wanneer je het programma start.<br />
-![](Data/picture/main.png)
+![](Data/picture/main.png)<br />
    - **Optie 1**: Deze optie is `Code Generator/Code Genarator`
 Met deze optie kun je codes genereren in het spreadsheet `Open_spreadsheet.cmd`.
 Je kunt een aantal invoeren en deze zullen gegenereerd worden binnen 10 seconden.<br />
-![](Data/picture/generator.png)
+![](Data/picture/generator.png)<br />
    - **Optie 2**: Deze optie is `Code verifieren/Verify Code`
    Met deze optie kun je een code van een klant of `Open_spreadsheet.cmd` pakken en checken of hij geldig is en wat de status is.<br />
-![](Data/picture/verify.png)
+![](Data/picture/verify.png)<br />
    - **Optie 3**: Dit is de optie `Print/Printen`
-   Met deze optie worden er **36** Random ongeactiveerde codes gevonden en op een blaadje met de coupons en barcode geplaatst.<br />
+   Met deze optie worden er **36** Random ongeactiveerde codes gevonden en op een blaadje met de coupons als barcode geplaatst.<br />
 Dit is een voorbeeld:
  [Coupon_List.pdf](https://github.com/BeginstationMilan/Voucher-Program/files/15388530/Coupon_List.pdf)
-![](Data/picture/print.png)
-Als de maat niet klopt of er is iets fout ga naar Contact onderaan en stuur een email.
+![](Data/picture/print.png)<br />
+Als de maat niet klopt of er is iets fout ga naar [Contact](#contact) onderaan en stuur een email.
 
    - **Optie 4**: Dit is een mini menu voor info<br />
-   ![](Data/picture/info.png)
+   ![](Data/picture/info.png)<br />
      - **4.1**: Dit is Basis info dit geeft een lijst van het volgende: <br />
 `Totaal aantal codes` = Aantal codes <br />
 `Actieve codes` = Aantal actieve codes <br />
@@ -84,17 +84,17 @@ Als de maat niet klopt of er is iets fout ga naar Contact onderaan en stuur een 
       
       - **4.2**: Dit is de `Alle codes` optie.
       Dit laat alle codes zien en hun status<br />
-![](Data/picture/alle.png)
+![](Data/picture/alle.png)<br />
    - **Optie 5**: Dit is de optie `Code activeren/Activate code`
    Deze optie is om een code te activeren.
 Dit doe je wanneer je een klant een coupon gaat geven.
 Anders kunnen ze het niet inleveren.  <br />
 Nadat je het hebt geactiveerd zet je een vinkje op geactiveerd op de coupon.<br />
-![](Data/picture/activeer.png)
+![](Data/picture/activeer.png)<br />
    - **Optie 6**: Deze optie is `Lever code in/Redeem code`
    Deze optie is om een code in te leveren van een klant.
 Dit maakt de code ongeldig en dan krijgt de klant 10% korting<br />
-![](Data/picture/lever.png)
+![](Data/picture/lever.png)<br />
    - **Optie 7**: Dit is de optie `Sluit af/Exit` 
    Dit sluit het programma af.<br />
 
