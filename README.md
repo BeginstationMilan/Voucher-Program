@@ -29,8 +29,13 @@ Voordat je begint, zorg ervoor dat je aan de volgende vereisten voldoet:
 4. Volg de stappen in de folder:
     - **Stap 1**: Installatie van Python 3.11  
       Open het bestand genaamd `step 1 Python 3.11.cmd`
+      Als windows zegt dat het bestand onveilig is klik op *Meer info/More info*
+      En klik daarna op Run
+      Download python via de site die wordt geopent
     - **Stap 2**: Installatie van de vereiste pakketten  
       Open het bestand genaamd `step 2 Pip install.cmd`
+      Dit instaleerd alle modules je hoeft niks te doen terwijl dit laad
+      Het kan tot 2min max duren
 
 Je hoeft geen `credentials.json` bestand te plaatsen; dit is al inbegrepen in de download.
 
