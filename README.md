@@ -11,6 +11,7 @@ Dit script is uitsluitend bedoeld voor medewerkers van Fietsstation en de eigena
 - [Gebruik](#gebruik)
 - [Hoofd Menu](#hoofd-menu)
    - [Optie 1](#optie-1)
+   - [Optie 2](#optie-2)
 - [Output File](#output-file)
 - [Default Folder](#default-folder)
 - [Spreadsheet Toegang](#spreadsheet-toegang)
