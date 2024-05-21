@@ -85,7 +85,7 @@ Als de maat niet klopt of er is iets fout ga naar [Contact](#contact) onderaan e
   ### Optie 4
 Dit is een mini menu voor info<br />
    ![](Data/picture/info.png)<br />
-  ### Optie 4 1
+  ### Optie 4.1
 Dit is Basis info dit geeft een lijst van het volgende: <br />
 `Totaal aantal codes` = Aantal codes <br />
 `Actieve codes` = Aantal actieve codes <br />
@@ -95,7 +95,7 @@ Dit is Basis info dit geeft een lijst van het volgende: <br />
 `Programma gemaakt door: Milan Vosters` = Info over maker <br />
 `Project gestart op: 08:00AM 16/5/2024` = Info over Project <br />
       
-  ### Optie 4 2
+  ### Optie 4.2
 Dit is de `Alle codes` optie.
       Dit laat alle codes zien en hun status<br />
 ![](Data/picture/alle.png)<br />
