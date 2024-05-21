@@ -54,6 +54,9 @@ Je kunt zelf kiezen welke je wilt gebruiken
 Het script zal je een menu presenteren om verschillende bewerkingen uit te voeren, zoals het genereren van codes, het controleren van de geldigheid van een code, het afdrukken van codes, het bekijken van informatie, het activeren en inwisselen van codes.
 
 ## Hoofd menu
+
+- **Menu**: Dit is wat je ziet wanneer je het programma start.<br />
+![](Data/picture/main.png)
    - **Optie 1**: Deze optie is `Code Generator/Code Genarator`
 Met deze optie kun je codes genereren in het spreadsheet `Open_spreadsheet.cmd`.
 Je kunt een aantal invoeren en deze zullen gegenereerd worden binnen 10 seconden.<br />
