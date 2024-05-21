@@ -39,8 +39,8 @@ Voordat je begint, zorg ervoor dat je aan de volgende vereisten voldoet:
       Open het bestand genaamd `step 2 Pip install.cmd`
       Dit instaleerd alle modules je hoeft niks te doen terwijl dit laad
       Het kan tot 2min max duren.
-      Ook Dit script kan voor de eerste keer zeggen dat het bestand onveilig is, doe het zelfde om hier omheen te komen als stap 1.
-
+      Ook Dit script kan voor de eerste keer zeggen dat het bestand onveilig is, doe het zelfde om hier omheen te komen als stap 1.<br />
+![](gifs/step2.gif)
 Je hoeft geen `credentials.json` bestand te plaatsen; dit is al inbegrepen in de download.
 
 ## Gebruik
