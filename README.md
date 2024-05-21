@@ -12,6 +12,13 @@ Dit script is uitsluitend bedoeld voor medewerkers van Fietsstation en de eigena
 - [Hoofd Menu](#hoofd-menu)
    - [Optie 1](#optie-1)
    - [Optie 2](#optie-2)
+   - [Optie 3](#optie-3)
+   - [Optie 4](#optie-4)
+       - [Optie 4.1](#optie-4.1)
+       - [Optie 4.2](#optie-4.2)
+   - [Optie 5](#optie-5)
+   - [Optie 6](#optie-6)
+   - [Optie 7](#optie-7)
 - [Output File](#output-file)
 - [Default Folder](#default-folder)
 - [Spreadsheet Toegang](#spreadsheet-toegang)
@@ -80,7 +87,8 @@ Als de maat niet klopt of er is iets fout ga naar [Contact](#contact) onderaan e
   ### Optie 4
 Dit is een mini menu voor info<br />
    ![](Data/picture/info.png)<br />
-     - **4.1**: Dit is Basis info dit geeft een lijst van het volgende: <br />
+  ### 4.1
+Dit is Basis info dit geeft een lijst van het volgende: <br />
 `Totaal aantal codes` = Aantal codes <br />
 `Actieve codes` = Aantal actieve codes <br />
 `Inactieve codes` = Aantal inactieve codes <br />
@@ -89,7 +97,8 @@ Dit is een mini menu voor info<br />
 `Programma gemaakt door: Milan Vosters` = Info over maker <br />
 `Project gestart op: 08:00AM 16/5/2024` = Info over Project <br />
       
-      - **4.2**: Dit is de `Alle codes` optie.
+  ### 4.2
+Dit is de `Alle codes` optie.
       Dit laat alle codes zien en hun status<br />
 ![](Data/picture/alle.png)<br />
   ### Optie 5
