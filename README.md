@@ -33,14 +33,14 @@ Voordat je begint, zorg ervoor dat je aan de volgende vereisten voldoet:
       Open het bestand genaamd `step 1 Python.cmd`
       Als windows zegt dat het bestand onveilig is klik op *Meer info/More info*
       En klik daarna op Run<br />
-![](gifs/step1.gif)
+![](data/gifs/step1.gif)
       Download python via de site die wordt geopent
     - **Stap 2**: Installatie van de vereiste pakketten  
       Open het bestand genaamd `step 2 Pip install.cmd`
       Dit instaleerd alle modules je hoeft niks te doen terwijl dit laad
       Het kan tot 2min max duren.
       Ook Dit script kan voor de eerste keer zeggen dat het bestand onveilig is, doe het zelfde om hier omheen te komen als stap 1.<br />
-![](gifs/step2.gif)
+![](data/gifs/step2.gif)
 Je hoeft geen `credentials.json` bestand te plaatsen; dit is al inbegrepen in de download.
 
 ## Gebruik
