@@ -1,4 +1,4 @@
-# Voucher Barcode Generator en Manager
+# Voucher code generator and coupon maker
 
 Deze repository bevat een Python-script dat unieke vouchercodes genereert, opslaat als barcodes en hun status beheert (bijv. activatie, inwisseling). Het integreert ook met Google Sheets voor het opslaan en beheren van de vouchercodes.
 
