@@ -14,6 +14,8 @@ Dit script is uitsluitend bedoeld voor medewerkers van Fietsstation en de eigena
 - [Default Folder](#default-folder)
 - [Spreadsheet Toegang](#spreadsheet-toegang)
 - [Functies](#functies)
+- [Errors](#errors)
+- [Contact](#contact)
 
 ## Vereisten
 
@@ -27,8 +29,8 @@ Voordat je begint, zorg ervoor dat je aan de volgende vereisten voldoet:
 2. Pak het zip-bestand uit naar een gewenste locatie op je computer.
 3. Open de uitgepakte map en voer de setup-folder uit.
 4. Volg de stappen in de folder:
-    - **Stap 1**: Installatie van Python 3.11  
-      Open het bestand genaamd `step 1 Python 3.11.cmd`
+    - **Stap 1**: Installatie van Python  
+      Open het bestand genaamd `step 1 Python.cmd`
       Als windows zegt dat het bestand onveilig is klik op *Meer info/More info*
       En klik daarna op Run
       Download python via de site die wordt geopent
@@ -59,20 +61,37 @@ Je kunt een aantal invoeren en deze zullen gegenereerd worden binnen 10 seconden
    Met deze optie kun je een code van een klant of `Open_spreadsheet.cmd` pakken en checken of hij geldig is en wat de status is.
 
    - **Optie 3**: Dit is de optie `Print/Printen`
-   Met deze optie worden er *36* Random ongeactiveerde codes gevonden en op een blaadje met de coupons en barcode geplaatst.
+   Met deze optie worden er **36** Random ongeactiveerde codes gevonden en op een blaadje met de coupons en barcode geplaatst.
 Dit is een voorbeeld:
  [Coupon_List.pdf](https://github.com/BeginstationMilan/Voucher-Program/files/15388530/Coupon_List.pdf)
 Als de maat niet klopt of er is iets fout ga naar Contact onderaan en stuur een email.
 
    - **Optie 4**: Dit is een mini menu voor info
-     - **4.1**: Dit is Basis info dit geeft een lijst van het volgende:
-`Totaal aantal codes` = Aantal codes
-`Actieve codes` = Aantal actieve codes
-`Inactieve codes` = Aantal inactieve codes
-`Geprinte codes` = Aantal geprinte codes
-`Gebruikte codes` = Aantal gebruikte codes
-`Programma gemaakt door: Milan Vosters` = Info over maker
-`Project gestart op: 08:00AM 16/5/2024` = Info over Project
+     - **4.1**: Dit is Basis info dit geeft een lijst van het volgende: <br />
+`Totaal aantal codes` = Aantal codes <br />
+`Actieve codes` = Aantal actieve codes <br />
+`Inactieve codes` = Aantal inactieve codes <br />
+`Geprinte codes` = Aantal geprinte codes <br />
+`Gebruikte codes` = Aantal gebruikte codes <br />
+`Programma gemaakt door: Milan Vosters` = Info over maker <br />
+`Project gestart op: 08:00AM 16/5/2024` = Info over Project <br />
+      
+      - **4.2**: Dit is de `Alle codes` optie.
+      Dit laat alle codes zien en hun status
+
+   - **Optie 5**: Dit is de optie `Code activeren/Activate code`
+   Deze optie is om een code te activeren.
+Dit doe je wanneer je een klant een coupon gaat geven.
+Anders kunnen ze het niet inleveren.  <br />
+Nadat je het hebt geactiveerd zet je een vinkje op geactiveerd op de coupon.
+
+   - **Optie 6**: Deze optie is `Lever code in/Redeem code`
+   Deze optie is om een code in te leveren van een klant.
+Dit maakt de code ongeldig en dan krijgt de klant 10% korting
+
+   - **Optie 7**: Dit is de optie `Sluit af/Exit` 
+   Dit sluit het programma af.
+
 
 ## Output File
 
@@ -145,6 +164,25 @@ Wisselt een opgegeven code in door deze als gebruikt te markeren in de Google Sh
 ### `main()`
 De hoofdfunctie die een gebruikersinterface biedt voor het beheren van vouchercodes.
 
+# Errors
+
+Hier zijn een paar mogelijke errors
+
+   - **Programma start niet**<br />
+dubbel check of je stap 1 `step 1 Python 3.11.cmd` & 2 `step 2 Pip install.cmd` hebt gedaan<br />
+Als je stap 1 niet doet heeft het programma geen software om te runnen <br />
+Als je stap 2 niet doet dan heeft het script niet de modules om te kunnen werken
+
+   - **Optie 3 `Niet genoeg onactieve codes`** <br />
+   Dit betekent dat het script niet genoeg onactieve ongeprinte codes heeft kunnen vinden<br />
+   Je kunt dit oplossen om meer codes te genereren<br />
+   Het script heeft er **36** nodig<br />
+
+   - **Optie 2 `Code niet gevonden`** <br />
+   Check of je de code goed hebt opgeschreven<br />
+   Het kan soms irritant zijn met kleine letter L en hoofdletter i Il
+
+   
 ---
 ## Contact
 
