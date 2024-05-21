@@ -245,11 +245,11 @@ def make_printed():
         # Fetch unprinted codes
         unactivated_codes = [(row[0], i + 1) for i, row in enumerate(values[1:]) if len(row) >= 3 and row[0].startswith("*") and not row[2]]
 
-        if len(unactivated_codes) < 36:
+        if len(unactivated_codes) < 12:
             print("Niet genoeg onactieve codes beschikbaar.")
             return
 
-        selected_codes = random.sample(unactivated_codes, 36)
+        selected_codes = random.sample(unactivated_codes, 12)
         for code, row_index in selected_codes:
             codes.append(code)
             sheet.update_cell(row_index + 1, 3, "Geprint")
@@ -267,8 +267,8 @@ def make_printed():
             draw = ImageDraw.Draw(final_img)
             font = ImageFont.load_default()
 
-            coupon_width, coupon_height = 204, 325
-            positions = [(x * coupon_width, y * coupon_height) for y in range(6) for x in range(6)]
+            coupon_width, coupon_height = 319, 509
+            positions = [(x * coupon_width, y * coupon_height) for y in range(3) for x in range(4)]
 
             for code in codes:
                 image_filename = os.path.join(DEFAULT_DIR, 'standaard.png')
