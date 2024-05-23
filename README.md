@@ -8,6 +8,7 @@ Dit script is uitsluitend bedoeld voor medewerkers van Fietsstation en de eigena
 
 - [Vereisten](#vereisten)
 - [Installatie](#installatie)
+- [App instalatie](#installatie-app)
 - [Gebruik](#gebruik)
 - [Hoofd Menu](#hoofd-menu)
    - [Optie 1](#optie-1)
@@ -49,6 +50,13 @@ Voordat je begint, zorg ervoor dat je aan de volgende vereisten voldoet:
       Ook Dit script kan voor de eerste keer zeggen dat het bestand onveilig is, doe het zelfde om hier omheen te komen als stap 1.<br />
 ![](Data/gifs/step2.gif)
 Je hoeft geen `credentials.json` bestand te plaatsen; dit is al inbegrepen in de download.
+
+## installatie app
+
+1. Download [Qpython](https://play.google.com/store/apps/details?id=org.qpython.qpy&pcampaignid=web_share) or [Python3](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&pcampaignid=web_share) for android
+2. open the `requirements_app.txt` file and copy the contents
+3. open terminal in the python app and paste the contens
+4. when the requirements are installed open the `àpp(pre-release).py file` and run it
 
 ## Gebruik
 
