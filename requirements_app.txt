@@ -1,0 +1,7 @@
+pip install gspread
+pip install oauth2client
+pip install Pillow
+pip install python-barcode
+pip install smtplib
+pip install kivy
+pip install img2pdf
