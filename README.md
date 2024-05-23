@@ -56,7 +56,7 @@ Je hoeft geen `credentials.json` bestand te plaatsen; dit is al inbegrepen in de
 1. Download [Qpython](https://play.google.com/store/apps/details?id=org.qpython.qpy&pcampaignid=web_share) or [Python3](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&pcampaignid=web_share) for android
 2. open the `requirements_app.txt` file and copy the contents
 3. open terminal in the python app and paste the contens
-4. when the requirements are installed open the `àpp(pre-release).py file` and run it
+4. when the requirements are installed open the `app(pre-release).py file` and run it
 
 ## Gebruik
 
