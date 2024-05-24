@@ -41,6 +41,8 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.core.window import Window
 from kivy.uix.popup import Popup
+from kivy.uix.dropdown import DropDown
+
 
 Code128.default_writer_options['write_text'] = False
 
@@ -426,6 +428,19 @@ class LoginScreen(Screen):
         # Authenticate user based on username and password
         account_type = self.authenticate(username, password)
         if account_type:
+            if account_type in ["Admin", "Work", "Customer"]:
+                self.manager.get_screen('main').set_logged_in_type(account_type)
+                self.switch_to_main()
+            else:
+                self.show_error_popup("Error", "Invalid account type")
+        else:
+            self.show_error_popup("Error", "Invalid credentials")
+
+        self.login_button.background_color = [1, 1, 1, 1]  # Revert button color
+
+        # Authenticate user based on username and password
+        account_type = self.authenticate(username, password)
+        if account_type:
             if account_type == "Admin":
                 self.switch_to_main()
             elif account_type == "Work":
@@ -500,13 +515,14 @@ class VoucherApp(App):
 
         return self.screen_manager
     
+
 class MainScreen(Screen):
     def __init__(self, **kwargs):
         super(MainScreen, self).__init__(**kwargs)
         self.layout = GridLayout(cols=2, spacing=10, padding=20)
 
         # Define the hexadecimal color code
-        button_color = '#3D7CC9'  # Example color code
+        button_color = [0.24, 0.49, 0.79, 1]  # Example color code in RGBA format
 
         self.buttons = {
             'Generate': Button(text='Generate Vouchers', on_press=self.switch_to_generate,
@@ -550,6 +566,22 @@ class MainScreen(Screen):
 
     def switch_to_login(self, instance):
         self.manager.current = 'login'
+
+    def set_logged_in_type(self, user_type):
+        # Reset all buttons to enabled state
+        for button in self.buttons.values():
+            button.disabled = False
+
+        # Disable buttons based on user_type
+        if user_type == 'Work':
+            self.buttons['Generate'].disabled = True
+            self.buttons['Print'].disabled = True
+            self.buttons['CodeControl'].disabled = True
+        elif user_type == 'Customer':
+            self.buttons['Generate'].disabled = True
+            self.buttons['Activate'].disabled = True
+            self.buttons['Print'].disabled = True
+            self.buttons['CodeControl'].disabled = True
 
 class GenerateScreen(Screen):
     def __init__(self, **kwargs):
@@ -733,7 +765,6 @@ class CheckScreen(Screen):
         success_popup = Popup(title=title, content=layout, size_hint=(0.75, 0.5))
         success_popup.open()
 
-
 class CodeControlScreen(Screen):
     def __init__(self, **kwargs):
         super(CodeControlScreen, self).__init__(**kwargs)
@@ -744,7 +775,7 @@ class CodeControlScreen(Screen):
                                      background_color=[0.3, 0.7, 0.3, 1], font_size=18)
 
         # Create a TextInput widget for search
-        self.search_input = TextInput(hint_text='Search code', multiline=False, font_size=16)
+        self.search_input = TextInput(hint_text='Search code', multiline=False, font_size=16, size_hint=(0.8, None), height=30)
         self.search_input.bind(text=self.update_code_buttons)
 
         # Create a layout to hold the search input, refresh button, and the list of codes
@@ -823,28 +854,46 @@ class CodeControlScreen(Screen):
                 )
                 self.code_list_layout.add_widget(code_button)
 
-
     def show_code_info(self, code_data):
         # Define the popup layout
-        content = BoxLayout(orientation='vertical', spacing=50, padding=50)
-        activate_disabled = False
-        redeem_disabled = False
-        if code_data[1] == 'Unactive':
-            activate_disabled = True
-        elif code_data[1] == 'Redeemed':
-            activate_disabled = True
-            redeem_disabled = True
+        content = BoxLayout(orientation='vertical', spacing=10, padding=10)
 
-        activate_button = Button(text='Activate', on_press=lambda instance: self.activate_code(code_data[0]),
-                                 disabled=activate_disabled)
-        redeem_button = Button(text='Redeem', on_press=lambda instance: self.redeem_code(code_data[0]),
-                               disabled=redeem_disabled)
+        # Determine button state based on code status
+        activate_disabled = not code_data[0].startswith('*') or not code_data[2]
+        redeem_disabled = code_data[0].startswith('*') or code_data[0].startswith('~')
+
+        # Create buttons
+        activate_button = Button(
+            text='Activate', 
+            on_press=lambda instance: self.activate_code(code_data[0]), 
+            disabled=activate_disabled, 
+            size_hint=(None, None), 
+            size=(200, 40),
+            background_color=[0.3, 0.7, 0.3, 1] if not activate_disabled else [0.7, 0.7, 0.7, 1]
+        )
+        redeem_button = Button(
+            text='Redeem', 
+            on_press=lambda instance: self.redeem_code(code_data[0]), 
+            disabled=redeem_disabled, 
+            size_hint=(None, None), 
+            size=(200, 40),
+            background_color=[0.3, 0.7, 0.3, 1] if not redeem_disabled else [0.7, 0.7, 0.7, 1]
+        )
+
+        # Create labels for code information
         status = 'Unactive' if code_data[0].startswith('*') else ('Redeemed' if code_data[0].startswith('~') else 'Active')
-        info_label = Label(text=f"Code: {code_data[0]}\nStatus: {status}\nPrinted: {code_data[2]}\nExpiry: {code_data[3]}")
+        info_label = Label(
+            text=f"Code: {code_data[0]}\nStatus: {status}\nPrinted: {code_data[2]}\nExpiry: {code_data[3]}",
+            size_hint_y=None,
+            height=150
+        )
+
+        # Add widgets to the popup content
         content.add_widget(info_label)
         content.add_widget(activate_button)
         content.add_widget(redeem_button)
 
+        # Create and open the popup
         popup = Popup(title=f'Code Options: {code_data[0]}', content=content, size_hint=(None, None), size=(400, 300))
         popup.open()
 
@@ -857,6 +906,36 @@ class CodeControlScreen(Screen):
     def switch_to_main(self, instance):
         self.manager.current = 'main'
 
+    def filter_active_codes(self):
+        self.filter_codes_by_status('Active')
+
+    def filter_unactive_codes(self):
+        self.filter_codes_by_status('Unactive')
+
+    def filter_printed_codes(self):
+        self.filter_codes_by_print_status(True)
+
+    def filter_unprinted_codes(self):
+        self.filter_codes_by_print_status(False)
+
+    def filter_redeemed_codes(self):
+        self.filter_codes_by_status('Redeemed')
+
+    def filter_codes_by_status(self, status):
+        filtered_codes = [code for code in self.codes if self.get_code_status(code) == status]
+        self.update_code_buttons(filtered_codes)
+
+    def filter_codes_by_print_status(self, printed):
+        filtered_codes = [code for code in self.codes if bool(code[2]) == printed]
+        self.update_code_buttons(filtered_codes)
+
+    def get_code_status(self, code_data):
+        if code_data[0].startswith('*'):
+            return 'Unactive'
+        elif code_data[0].startswith('~'):
+            return 'Redeemed'
+        else:
+            return 'Active'
 
 class ScrollViewApp(App):
     def build(self):
