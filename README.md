@@ -1,4 +1,4 @@
-# Voucher code generator and coupon maker
+# Voucher Code Generator and Coupon Maker
 
 Deze repository bevat een Python-script dat unieke vouchercodes genereert, opslaat als barcodes en hun status beheert (bijv. activatie, inwisseling). Het integreert ook met Google Sheets voor het opslaan en beheren van de vouchercodes.
 
@@ -8,19 +8,21 @@ Dit script is uitsluitend bedoeld voor medewerkers van Fietsstation en de eigena
 
 - [Vereisten](#vereisten)
 - [Installatie](#installatie)
-- [App instalatie](#installatie-app)
+- [Installatie App](#installatie-app)
 - [Gebruik](#gebruik)
-- [Hoofd Menu](#hoofd-menu)
+- [Hoofdmenu](#hoofdmenu)
    - [Optie 1](#optie-1)
    - [Optie 2](#optie-2)
    - [Optie 3](#optie-3)
    - [Optie 4](#optie-4)
+     - [Optie 4.1](#optie-41)
+     - [Optie 4.2](#optie-42)
    - [Optie 5](#optie-5)
    - [Optie 6](#optie-6)
    - [Optie 7](#optie-7)
-- [Output File](#output-file)
-- [Default Folder](#default-folder)
-- [Spreadsheet Toegang](#spreadsheet-toegang)
+- [Outputbestand](#outputbestand)
+- [Standaardmap](#standaardmap)
+- [Spreadsheettoegang](#spreadsheettoegang)
 - [Functies](#functies)
 - [Errors](#errors)
 - [Contact](#contact)
@@ -35,104 +37,102 @@ Voordat je begint, zorg ervoor dat je aan de volgende vereisten voldoet:
 
 1. Download het zip-bestand van de repository.
 2. Pak het zip-bestand uit naar een gewenste locatie op je computer.
-3. Open de uitgepakte map en voer de setup-folder uit.
-4. Volg de stappen in de folder:
+3. Open de uitgepakte map en voer de setup-map uit.
+4. Volg de stappen in de map:
+
     - **Stap 1**: Installatie van Python  
-      Open het bestand genaamd `step 1 Python.cmd`
-      Als windows zegt dat het bestand onveilig is klik op *Meer info/More info*
-      En klik daarna op Run<br />
-![](Data/gifs/step1.gif)
-      Download python via de site die wordt geopent
+      Open het bestand genaamd `step 1 Python.cmd`. Als Windows zegt dat het bestand onveilig is, klik op *Meer info/More info* en daarna op *Run*.<br />
+      ![](Data/gifs/step1.gif)
+      
     - **Stap 2**: Installatie van de vereiste pakketten  
-      Open het bestand genaamd `step 2 Pip install.cmd`
-      Dit instaleerd alle modules je hoeft niks te doen terwijl dit laad
-      Het kan tot 2min max duren.
-      Ook Dit script kan voor de eerste keer zeggen dat het bestand onveilig is, doe het zelfde om hier omheen te komen als stap 1.<br />
-![](Data/gifs/step2.gif)
-Je hoeft geen `credentials.json` bestand te plaatsen; dit is al inbegrepen in de download.
+      Open het bestand genaamd `step 2 Pip install.cmd`. Dit installeert alle modules; je hoeft niets te doen terwijl dit loopt. Het kan tot 2 minuten duren. Ook dit script kan voor de eerste keer zeggen dat het bestand onveilig is. Doe hetzelfde om hier omheen te komen als bij stap 1.<br />
+      ![](Data/gifs/step2.gif)
 
-## installatie app
+    Je hoeft geen `credentials.json` bestand te plaatsen; dit is al inbegrepen in de download.
 
-1. Download [Qpython](https://play.google.com/store/apps/details?id=org.qpython.qpy&pcampaignid=web_share) or [Python3](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&pcampaignid=web_share) for android
-2. open the `requirements_app.txt` file and copy the contents
-3. open terminal in the python app and paste the contens
-4. when the requirements are installed open the `app(pre-release).py file` and run it
+## Installatie App
+
+1. Download [Qpython](https://play.google.com/store/apps/details?id=org.qpython.qpy&pcampaignid=web_share) of [Python3](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&pcampaignid=web_share) voor Android.
+2. Open het `requirements_app.txt` bestand en kopieer de inhoud.
+3. Open de terminal in de Python app en plak de inhoud.
+4. Wanneer de vereisten zijn geïnstalleerd, open het `app(pre-release).py` bestand en voer het uit.
 
 ## Gebruik
 
 Klik op het `voucher.py` bestand om het script te starten.
 
-Je zult 2 versies zien
-`Voucher-EG.py` En `Voucher-NL.py`, 
-`Voucher-EG.py` Is de engelse versie en `Voucher-NL.py` is de nederlandse versie.
-Je kunt zelf kiezen welke je wilt gebruiken
+Je zult 2 versies zien: `Voucher-EG.py` en `Voucher-NL.py`. `Voucher-EG.py` is de Engelse versie en `Voucher-NL.py` is de Nederlandse versie. Je kunt zelf kiezen welke je wilt gebruiken.
+
 Het script zal je een menu presenteren om verschillende bewerkingen uit te voeren, zoals het genereren van codes, het controleren van de geldigheid van een code, het afdrukken van codes, het bekijken van informatie, het activeren en inwisselen van codes.
 
-## Hoofd menu
+## Hoofdmenu
 
-  ### Menu 
-  Dit is wat je ziet wanneer je het programma start.<br />
-![](Data/picture/main.png)<br />
-  ### Optie 1
-   - Deze optie is `Code Generator/Code Genarator`
-Met deze optie kun je codes genereren in het spreadsheet `Open_spreadsheet.cmd`.
-Je kunt een aantal invoeren en deze zullen gegenereerd worden binnen 10 seconden.<br />
-![](Data/picture/generator.png)<br />
-  ### Optie 2
-  Deze optie is `Code verifieren/Verify Code`
-   Met deze optie kun je een code van een klant of `Open_spreadsheet.cmd` pakken en checken of hij geldig is en wat de status is.<br />
-![](Data/picture/verify.png)<br />
-  ### Optie 3
-Dit is de optie `Print/Printen`
-   Met deze optie worden er **36** Random ongeactiveerde codes gevonden en op een blaadje met de coupons als barcode geplaatst.<br />
-Dit is een voorbeeld:
- [Coupon_List.pdf](https://github.com/BeginstationMilan/Voucher-Program/files/15388530/Coupon_List.pdf)
-![](Data/picture/print.png)<br />
-Als de maat niet klopt of er is iets fout ga naar [Contact](#contact) onderaan en stuur een email.
+### Menu
+Dit is wat je ziet wanneer je het programma start.<br />
+![](Data/picture/main.png)
 
-  ### Optie 4
-Dit is een mini menu voor info<br />
-   ![](Data/picture/info.png)<br />
-  ### Optie 4.1
-Dit is Basis info dit geeft een lijst van het volgende: <br />
-`Totaal aantal codes` = Aantal codes <br />
-`Actieve codes` = Aantal actieve codes <br />
-`Inactieve codes` = Aantal inactieve codes <br />
-`Geprinte codes` = Aantal geprinte codes <br />
-`Gebruikte codes` = Aantal gebruikte codes <br />
-`Programma gemaakt door: Milan Vosters` = Info over maker <br />
-`Project gestart op: 08:00AM 16/5/2024` = Info over Project <br />
-      
-  ### Optie 4.2
-Dit is de `Alle codes` optie.
-      Dit laat alle codes zien en hun status<br />
-![](Data/picture/alle.png)<br />
-  ### Optie 5
-Dit is de optie `Code activeren/Activate code`
-   Deze optie is om een code te activeren.
-Dit doe je wanneer je een klant een coupon gaat geven.
-Anders kunnen ze het niet inleveren.  <br />
-Nadat je het hebt geactiveerd zet je een vinkje op geactiveerd op de coupon.<br />
-![](Data/picture/activeer.png)<br />
-  ### Optie 6
-Deze optie is `Lever code in/Redeem code`
-   Deze optie is om een code in te leveren van een klant.
-Dit maakt de code ongeldig en dan krijgt de klant 10% korting<br />
-![](Data/picture/lever.png)<br />
-  ### Optie 7
-Dit is de optie `Sluit af/Exit` 
-   Dit sluit het programma af.<br />
+### Optie 1
+- **Code Generator/Code Genarator**
+Met deze optie kun je codes genereren in het spreadsheet `Open_spreadsheet.cmd`. Je kunt een aantal invoeren en deze zullen binnen 10 seconden worden gegenereerd.<br />
+![](Data/picture/generator.png)
 
+### Optie 2
+- **Code Verifiëren/Verify Code**
+Met deze optie kun je een code van een klant of `Open_spreadsheet.cmd` pakken en controleren of hij geldig is en wat de status is.<br />
+![](Data/picture/verify.png)
 
-## Output File
+### Optie 3
+- **Print/Printen**
+Met deze optie worden er **36** random ongeactiveerde codes gevonden en op een blaadje met de coupons als barcode geplaatst.<br />
+Dit is een voorbeeld: [Coupon_List.pdf](https://github.com/BeginstationMilan/Voucher-Program/files/15388530/Coupon_List.pdf)<br />
+![](Data/picture/print.png)
+
+Als de maat niet klopt of er is iets fout, ga naar [Contact](#contact) onderaan en stuur een email.
+
+### Optie 4
+- **Info Menu**
+Dit is een mini-menu voor info.<br />
+![](Data/picture/info.png)
+
+#### Optie 4.1
+- **Basis Info**
+Dit geeft een lijst van het volgende:<br />
+  - `Totaal aantal codes` = Aantal codes<br />
+  - `Actieve codes` = Aantal actieve codes<br />
+  - `Inactieve codes` = Aantal inactieve codes<br />
+  - `Geprinte codes` = Aantal geprinte codes<br />
+  - `Gebruikte codes` = Aantal gebruikte codes<br />
+  - `Programma gemaakt door: Milan Vosters` = Info over maker<br />
+  - `Project gestart op: 08:00AM 16/5/2024` = Info over project<br />
+
+#### Optie 4.2
+- **Alle Codes**
+Dit laat alle codes zien en hun status.<br />
+![](Data/picture/alle.png)
+
+### Optie 5
+- **Code Activeren/Activate Code**
+Deze optie is om een code te activeren. Dit doe je wanneer je een klant een coupon gaat geven. Anders kunnen ze het niet inleveren. Nadat je het hebt geactiveerd, zet je een vinkje op geactiveerd op de coupon.<br />
+![](Data/picture/activeer.png)
+
+### Optie 6
+- **Code Inleveren/Redeem Code**
+Deze optie is om een code in te leveren van een klant. Dit maakt de code ongeldig en dan krijgt de klant 10% korting.<br />
+![](Data/picture/lever.png)
+
+### Optie 7
+- **Sluit Af/Exit**
+Dit sluit het programma af.<br />
+
+## Outputbestand
 
 De gegenereerde coupons en barcodes worden opgeslagen in een output-bestand. Dit bestand bevat alle uitkomsten van het script, zoals de gegenereerde barcodes en coupons. Zorg ervoor dat je de locatie van dit bestand noteert, zodat je eenvoudig toegang hebt tot de opgeslagen gegevens.
 
-## Default Folder
+## Standaardmap
 
-De folder genaamd `Default` bevat alle standaard ontwerpen die het script nodig heeft om de coupons en barcodes te maken. Zorg ervoor dat deze folder aanwezig is in de hoofdmap van het project, omdat het script anders niet correct zal functioneren.
+De map genaamd `Default` bevat alle standaardontwerpen die het script nodig heeft om de coupons en barcodes te maken. Zorg ervoor dat deze map aanwezig is in de hoofdmap van het project, omdat het script anders niet correct zal functioneren.
 
-## Spreadsheet Toegang
+## Spreadsheettoegang
 
 In de hoofdmap van de uitgepakte bestanden bevindt zich een bestand genaamd `Open_spreadsheet.cmd`. Dit bestand opent een link naar de Google Spreadsheet die alle informatie en codes bevat. Door dit bestand uit te voeren, krijg je eenvoudig toegang tot de spreadsheet waar je de status en details van alle vouchercodes kunt beheren.
 
@@ -184,40 +184,33 @@ Drukt afbeeldingen af met de standaardprinter op Windows.
 Toont het statusmenu voor verschillende informatie over codes.
 
 ### `show_basic_info()`
-Toont basisinformatie over de codes.
+Toont basisinformatie over de gegenereerde codes.
 
 ### `show_all_codes()`
-Toont alle codes en hun status.
+Toont alle gegenereerde codes en hun status.
 
-### `redeem_code(code)`
-Wisselt een opgegeven code in door deze als gebruikt te markeren in de Google Sheet.
+### `redeem_code(code, credentials_file_path=CREDENTIALS_FILE_PATH)`
+Markeert een opgegeven code als ingewisseld in de Google Sheet.
 
-### `main()`
-De hoofdfunctie die een gebruikersinterface biedt voor het beheren van vouchercodes.
+### `redeem_code_with_credentials(code, credentials)`
+Markeert een opgegeven code als ingewisseld met de gegeven credentials.
 
-# Errors
+### `main_menu()`
+Toont het hoofdmenu van het programma.
 
-Hier zijn een paar mogelijke errors
+## Errors
 
-   - **Programma start niet**<br />
-dubbel check of je stap 1 `step 1 Python 3.11.cmd` & 2 `step 2 Pip install.cmd` hebt gedaan<br />
-Als je stap 1 niet doet heeft het programma geen software om te runnen <br />
-Als je stap 2 niet doet dan heeft het script niet de modules om te kunnen werken
+- **Fout bij het genereren van een barcode**: Controleer of de `Default` map aanwezig is in de hoofdmap en of de barcode bibliotheek correct is geïnstalleerd.
+- **Google Sheets API-fout**: Zorg ervoor dat de Google Sheets API-referenties correct zijn en dat er internettoegang is.
+- **Printerfout**: Controleer of de printer correct is aangesloten en ingesteld op je systeem.
 
-   - **Optie 3 `Niet genoeg onactieve codes`** <br />
-   Dit betekent dat het script niet genoeg onactieve ongeprinte codes heeft kunnen vinden<br />
-   Je kunt dit oplossen om meer codes te genereren<br />
-   Het script heeft er **36** nodig<br />
-
-   - **Optie 2 `Code niet gevonden`** <br />
-   Check of je de code goed hebt opgeschreven<br />
-   Het kan soms irritant zijn met kleine letter L en hoofdletter i Il
-
-   
----
 ## Contact
 
-**Gemaakt door**: Milan Vosters  
-**Project gestart op**: 08:00AM 16/5/2024
+Als je vragen hebt of tegen problemen aanloopt, neem dan contact op met:
 
-Voor eventuele problemen of vragen, open een issue op GitHub of neem contact met mij op via [m.vosters@beginstation.nl](mailto:m.vosters@beginstation.nl).
+- **Naam**: Milan Vosters
+- **Email**: [email@example.com](mailto:m.vosters@beginstation.nl)
+- **Website**: [Beginstation](https://www.beginstation.nl)
+
+---
+
