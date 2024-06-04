@@ -209,7 +209,7 @@ Toont het hoofdmenu van het programma.
 Als je vragen hebt of tegen problemen aanloopt, neem dan contact op met:
 
 - **Naam**: Milan Vosters
-- **Email**: [email@example.com](mailto:m.vosters@beginstation.nl)
+- **Email**: [email](mailto:m.vosters@beginstation.nl)
 - **Website**: [Beginstation](https://www.beginstation.nl)
 
 ---
